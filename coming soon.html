@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	 <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S0NBHL56VS"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-S0NBHL56VS');
+	</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO -->
+  <meta name="description" content="Mechanical design, CAD, 3D scanning, 3D printing, and reverse engineering services based in Crawley, West Sussex.">
+  <meta name="keywords" content="3D Printing, 3D Design, CAD Designer, CAD Services, 3D Printing Services, Engineering Services">
+  <meta name="robots" content="index, follow">
+  
+  <title>Coming Soon|DanMech Design</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/f8179e8326.js" crossorigin="anonymous"></script>
+  
+
+  
+</head>
+<body>
+	<header>
+	  <div class="hero-text">
+		<h1>DanMech Design</h1>
+		<p>Design & prototyping services</p>
+	  </div>
+	</header>
+
+	<section class="intro">
+		<div class="intro-content">
+		  <h2>Coming Soon!</h2>
+			<p>
+				Our new website is currently under construction 🛠️  
+			</p>
+			<p>
+				In the meantime, please reach out if you'd like to learn more or book with us!
+			</p>
+		</div>
+	</section>
+
+	
+	
+	<section class="contact" id="contact">
+	  <h2>Contact</h2>
+	  <p>Get in touch to discuss your project or engineering requirements.</p>
+
+	  <div class="contact-icons">
+		<a href="mailto:danieljbarker97@gmail.com" class="icon email" aria-label="Email">
+		  <i class="fa-solid fa-envelope"></i>
+		</a>
+
+		<a href="https://www.instagram.com/life_of_an_engineer__/" target="_blank" class="icon instagram" aria-label="Instagram">
+		  <i class="fa-brands fa-instagram"></i>
+		</a>
+		
+		<a href="https://www.ebay.co.uk/usr/dan241297" target="_blank" class="icon ebay" aria-label="Online Store">
+		  <i class="fa-brands fa-ebay"></i>
+		</a>
+	  </div>	  
+	</section>
+	
+
+	<footer>
+	&copy; 2026 DanMech Design. All rights reserved.
+	</footer>
+  
+	<!-- Lightbox -->
+	<div id="lightbox">
+		<span id="close-lightbox">&times;</span>
+		<img id="lightbox-img" src="" alt="Expanded dog photo">
+	</div>
+	
+	<script>
+		const gallery = document.getElementById("project-gallery");
+
+		//Loop through images in the folder, starting at i=1, up to the max specified value of i.
+		for (let i = 1; i <= 7; i++) {
+		  const img = document.createElement("img"); //'img' is the incrimenting image ID
+		  img.src = `images/project-img${i}.jpg`;	//Look for file name project-img + img number
+		  img.alt = `DanMech Design engineering project ${i}`;		//Generate alt text for images with same sequential suffix
+		  img.loading = "lazy";   //Lazy loading to make it quicker
+		  gallery.appendChild(img);
+		}
+	</script>
+	
+	<script>
+		const lightbox = document.getElementById("lightbox");
+		const lightboxImg = document.getElementById("lightbox-img");
+		const closeBtn = document.getElementById("close-lightbox");
+
+		document.addEventListener("click", function(e) {
+		  if (e.target.matches(".image-grid img")) {
+			lightbox.style.display = "flex";
+			lightboxImg.src = e.target.src;
+		  }
+		});
+
+		closeBtn.onclick = function() {
+		  lightbox.style.display = "none";
+		};
+
+		lightbox.onclick = function(e) {
+		  if (e.target !== lightboxImg) {
+			lightbox.style.display = "none";
+		  }
+		};
+	</script>
+  
+</body>
+</html>

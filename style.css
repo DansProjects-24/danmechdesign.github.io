@@ -1,0 +1,554 @@
+/* ---------------------------- */
+/* Root Variables               */
+/* ---------------------------- */
+:root {
+  --accent: #2563eb;
+  --accent-red: #dc2626;
+  --accent-green: #16a34a;
+
+  --dark: #0f172a;
+  --light: #f3f4f6;
+  --text: #222;
+}
+
+/* ---------------------------- */
+/* Reset & Base Styling         */
+/* ---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background-color: var(--light);
+  line-height: 1.6;
+}
+
+/* ---------------------------- */
+/* Section Base Styling         */
+/* ---------------------------- */
+section {
+  padding: 50px 20px;
+  max-width: 1500px;
+  margin: auto;
+  text-align: center;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+section:nth-of-type(odd) {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+section:nth-of-type(even) {
+  background-color: #eef2f5;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+section p {
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+/* ---------------------------- */
+/* Header Section               */
+/* ---------------------------- */
+header {
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('images/hero-img.jpg') center center/ cover no-repeat;
+
+  text-align: center;
+
+  padding: 180px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  min-height: 30vh;
+}
+
+header h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  color: #dbe4ea;
+}
+
+header h1,
+header p {
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.8),
+    0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* ---------------------------- */
+/* Navbar Styling               */
+/* ---------------------------- */
+.navbar {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  padding: 12px 10px;
+}
+
+.navbar ul {
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 40px;
+
+  padding: 0;
+  margin: 0;
+
+  flex-wrap: nowrap;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+
+  font-weight: 600;
+  color: var(--dark);
+
+  padding: 10px 14px;
+  border-radius: 8px;
+
+  transition: all 0.25s ease;
+
+  white-space: nowrap;
+
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.navbar ul li a:hover {
+  background: var(--dark);
+  color: #fff;
+}
+
+/* ---------------------------- */
+/* Intro Section                */
+/* ---------------------------- */
+.intro {
+  padding: 60px 20px;
+}
+
+.intro-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.intro-image img {
+  width: 220px;
+  height: 220px;
+
+  border-radius: 20px;
+
+  object-fit: cover;
+
+  border: 3px solid var(--border);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.intro-text {
+  max-width: 700px;
+  text-align: left;
+}
+
+.intro-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+
+  list-style: none;
+
+  padding: 0;
+  margin-top: 10px;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  color: var(--dark);
+}
+
+.intro-bullets li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.intro-bullets li::before {
+  content: "\f3a5";
+
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: var(--accent);
+}
+
+/* ---------------------------- */
+/* Services Section             */
+/* ---------------------------- */
+.service-list {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 25px;
+}
+
+.service-item {
+  background: var(--card);
+
+  padding: 30px;
+
+  border-radius: 16px;
+
+  border-top: 4px solid transparent;
+  
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--accent);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.service-item h3 {
+  color: var(--dark);
+
+  margin-bottom: 12px;
+
+  font-weight: 600;
+}
+
+.service-item h3 i {
+  margin-right: 10px;
+
+  font-size: 1.2em;
+
+  color: var(--accent);
+}
+
+.service-item p {
+  color: #555;
+}
+
+.service-item {
+  border-top: 4px solid transparent;
+}
+.service-item:nth-child(1) {
+  border-top-color: #2563eb;
+}
+
+.service-item:nth-child(2) {
+  border-top-color: #dc2626;
+}
+
+.service-item:nth-child(3) {
+  border-top-color: #16a34a;
+}
+
+/* ---------------------------- */
+/* Downloads / Links            */
+/* ---------------------------- */
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.downloads a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #fff;
+
+  border-radius: 10px;
+
+  padding: 12px 18px;
+
+  color: var(--dark);
+
+  text-decoration: none;
+
+  border: 1px solid #ddd;
+
+  transition: all 0.3s ease;
+}
+
+.downloads a:hover {
+  background: var(--dark);
+  color: #fff;
+
+  border-color: var(--dark);
+
+  transform: translateY(-3px);
+}
+
+/* ---------------------------- */
+/* Contact Section              */
+/* ---------------------------- */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.contact-icons .icon {
+  font-size: 4rem;
+
+  border-radius: 20px;
+
+  width: 110px;
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+
+  color: #fff;
+}
+
+.icon.email {
+  background: #d93025;
+}
+
+.icon.instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285AEB 90%
+  );
+}
+
+
+.icon.ebay {
+  background: linear-gradient(
+    135deg,
+    #e53238,
+    #0064d2
+  );
+
+  color: #fff;
+}
+
+.contact-icons .icon:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+
+  filter: brightness(1.1);
+}
+
+/* ---------------------------- */
+/* Gallery Section              */
+/* ---------------------------- */
+.gallery .image-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 18px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+/* ---------------------------- */
+/* Footer                       */
+/* ---------------------------- */
+footer {
+  text-align: center;
+
+  padding: 30px 20px;
+
+  font-size: 0.9rem;
+
+  color: var(--muted);
+
+  background: var(--light);
+
+  border-top: 1px solid var(--border);
+}
+
+/* ---------------------------- */
+/* Lightbox                     */
+/* ---------------------------- */
+#lightbox {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.88);
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+
+  border-radius: 12px;
+}
+
+#close-lightbox {
+  position: absolute;
+
+  top: 25px;
+  right: 35px;
+
+  font-size: 40px;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+/* ---------------------------- */
+/* Responsive Tweaks            */
+/* ---------------------------- */
+@media (max-width: 800px) {
+
+  header {
+    padding: 120px 15px;
+    min-height: 50vh;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  header p {
+    font-size: 1.05rem;
+  }
+
+  .navbar ul {
+    gap: 6px;
+  }
+
+  .navbar ul li a {
+    padding: 6px 8px;
+  }
+
+  .intro {
+    padding: 40px 15px;
+  }
+
+  .intro-inner {
+    gap: 20px;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-image img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .service-item {
+    padding: 24px;
+  }
+
+  .contact-icons .icon {
+    font-size: 3rem;
+
+    width: 85px;
+    height: 85px;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+}
