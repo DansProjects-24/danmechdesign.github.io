@@ -19,7 +19,7 @@
   <meta name="keywords" content="3D Printing, 3D Design, CAD Designer, CAD Services, 3D Printing Services, Engineering Services">
   <meta name="robots" content="index, follow">
   
-  <title>Coming Soon|DanMech Design</title>
+  <title>DanMech Design | Engineering Design & Prototyping</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="favicon.PNG">
   
@@ -30,26 +30,98 @@
   
 </head>
 <body>
-	<header>
+<!-- 	<header>
 	  <div class="hero-text">
 		<h1>DanMech Design</h1>
 		<p>Design & prototyping services</p>
 	  </div>
-	</header>
+	</header> -->
+	
+	<header class="hero">
 
-	<section class="intro">
-		<div class="intro-content">
-		  <h2>Coming Soon!</h2>
-			<p>
-				Our new website is currently under construction 🛠️  
-			</p>
-			<p>
-				In the meantime, please reach out if you'd like to learn more or book with us!
-			</p>
+	  <div class="hero-background">
+
+		<div class="hero-panel">
+		  <img src="images/hero-img-1.JPG" alt="CAD Design">
 		</div>
+
+		<div class="hero-panel">
+		  <img src="images/hero-img-2.JPG" alt="3D Printing">
+		</div>
+
+		<div class="hero-panel">
+		  <img src="images/hero-img-3.JPG" alt="3D Scanning">
+		</div>
+
+	  </div>
+
+	  <div class="hero-overlay"></div>
+
+	  <div class="hero-content">
+		<h1>DanMech Design</h1>
+		<p>3D Design • 3D Printing • 3D Scanning</p>
+	  </div>
+
+	</header>
+	
+	<nav class="navbar">
+		<ul>
+			<li><a href="#about">About</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#products">Products</a></li>
+			<li><a href="#gallery">Gallery</a></li>
+		</ul>
+	</nav>
+
+	<section class="intro" id="about">
+	  <div class="intro-content">
+		<div class="intro-inner">
+		  <div class="intro-image">
+			<img src="website-logo.PNG" alt="logo.PNG">
+		  </div>
+		  <div class="intro-text">
+			<h2>About</h2>
+			<p>
+				Mechanical design engineer specialising in CAD, 3D printing, and 3D scanning services for product development, 
+				prototyping, and manufacturing applications.
+				Using industry-standard CAD software, 3D scanning technology, and additive manufacturing techniques, 
+				I help transform ideas into functional components, reverse-engineered parts, and production-ready designs.
+			</p>
+			<ul class="intro-bullets">
+			  <li>Qualified Mechanical Engineer</li>
+			  <li>Certified SolidWorks Professional</li>
+			  <li>10+ Years Multi-Platform CAD Experience</li>
+			  <li>8+ Years 3D Printing Experience</li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
 	</section>
 
-	
+	<section class="services" id="services">
+	  <h2>Services</h2>
+	  <div class="service-list">
+		<div class="service-item">
+		  <h3><i class="fa-solid fa-compass-drafting"></i>3D Design</h3>
+		  <p>
+			Professional CAD modelling and mechanical design services using SolidWorks for product development, prototyping, and manufacturing applications.
+		  </p>
+		</div>
+		<div class="service-item">
+		  <h3><i class="fa-solid fa-cube"></i>3D Printing</h3>
+		  <p>
+			In-house 3D printing services for rapid prototyping, functional end-use parts, and low-volume manufacturing applications.
+		  </p>
+		</div>
+		<div class="service-item">
+		  <h3><i class="fa-solid fa-expand"></i>3D Scanning</h3>
+		  <p>
+			High-accuracy 3D scanning and reverse engineering services for product development, replacement components, and prototype refinement.
+		  </p>
+		</div>
+	  </div>
+	</section>
 	
 	<section class="contact" id="contact">
 	  <h2>Contact</h2>
@@ -63,16 +135,33 @@
 		<a href="https://www.instagram.com/life_of_an_engineer__/" target="_blank" class="icon instagram" aria-label="Instagram">
 		  <i class="fa-brands fa-instagram"></i>
 		</a>
-		
+	  </div>	  
+	</section>
+	
+	<section class="products" id="products">
+	  <h2>Products</h2>
+	  <p>Browse available products and components</p>
+
+	  <div class="contact-icons">
 		<a href="https://www.ebay.co.uk/usr/dan241297" target="_blank" class="icon ebay" aria-label="Online Store">
 		  <i class="fa-brands fa-ebay"></i>
+		</a>
+		
+		<a href="#" class="icon etsy disabled" aria-label="Etsy Store Coming Soon">
+			<i class="fa-brands fa-etsy"></i>
 		</a>
 	  </div>	  
 	</section>
 	
+	<section class="gallery" id="gallery">
+		<h2>Project Gallery</h2>
+		<div class="image-grid" id="project-gallery"></div>
+		</div>
+	</section>
 
 	<footer>
-	&copy; 2026 DanMech Design. All rights reserved.
+	  <p>DanMech Design • Crawley, West Sussex, United Kingdom</p>
+	  <p>&copy; 2026 DanMech Design. All rights reserved.</p>
 	</footer>
   
 	<!-- Lightbox -->
@@ -85,9 +174,9 @@
 		const gallery = document.getElementById("project-gallery");
 
 		//Loop through images in the folder, starting at i=1, up to the max specified value of i.
-		for (let i = 1; i <= 7; i++) {
+		for (let i = 1; i <= 12; i++) {
 		  const img = document.createElement("img"); //'img' is the incrimenting image ID
-		  img.src = `images/project-img${i}.jpg`;	//Look for file name project-img + img number
+		  img.src = `images/project-img${i}.JPG`;	//Look for file name project-img + img number
 		  img.alt = `DanMech Design engineering project ${i}`;		//Generate alt text for images with same sequential suffix
 		  img.loading = "lazy";   //Lazy loading to make it quicker
 		  gallery.appendChild(img);

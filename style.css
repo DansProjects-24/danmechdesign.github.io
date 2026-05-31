@@ -35,7 +35,7 @@ body {
 /* Section Base Styling         */
 /* ---------------------------- */
 section {
-  padding: 50px 20px;
+  padding: 25px 20px;
   max-width: 1500px;
   margin: auto;
   text-align: center;
@@ -66,45 +66,160 @@ section p {
   line-height: 1.7;
 }
 
-/* ---------------------------- */
-/* Header Section               */
-/* ---------------------------- */
-header {
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('images/hero-img.jpg') center center/ cover no-repeat;
 
-  text-align: center;
+/* ---------------------------- */
+/* Hero Section - 3 images      */
+/* ---------------------------- */
 
-  padding: 180px 20px;
+.hero {
+  position: relative;
+
+  min-height: 38vh;
+
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 
-  min-height: 30vh;
+  text-align: center;
 }
 
-header h1 {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  margin-bottom: 0.5rem;
+/* 3 image layout */
+.hero-background {
+  position: absolute;
+
+  inset: 0;
+
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr 1.5fr; /* Ratio of each image width */
+}
+
+/* individual image panels */
+.hero-panel {
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* images */
+.hero-panel img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter:
+    saturate(0.9)
+    contrast(1.05);
+
+  transform: scale(1.03);
+}
+
+/* soft blend between images */
+.hero-panel::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: -70px;
+
+  width: 140px;
+  height: 100%;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to right,
+    rgba(15,23,42,0),
+    rgba(15,23,42,0.82),
+    rgba(15,23,42,0)
+  );
+
+  filter: blur(30px);
+}
+
+/* dark overlay */
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(15,23,42,0.55),
+      rgba(15,23,42,0.72)
+    );
+
+  z-index: 3;
+}
+
+/* text content */
+.hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+
   font-weight: 700;
-  color: #fff;
+
+  color: white;
+
   letter-spacing: 1px;
-}
 
-header p {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 300;
-  color: #dbe4ea;
-}
+  margin-bottom: 0.75rem;
 
-header h1,
-header p {
   text-shadow:
-    0 2px 4px rgba(0,0,0,0.8),
-    0 4px 12px rgba(0,0,0,0.6);
+    0 4px 12px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+
+  color: #dbe4ea;
+
+  font-weight: 300;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ---------------------------- */
+/* Mobile Hero                  */
+/* ---------------------------- */
+
+@media (max-width: 800px) {
+
+  .hero {
+    min-height: 55vh;
+  }
+
+  .hero-background {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .hero-panel::after {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
 }
 
 /* ---------------------------- */
@@ -195,35 +310,18 @@ header p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-
+  gap: 10px;
   list-style: none;
-
-  padding: 0;
-  margin-top: 10px;
-
-  font-weight: 600;
-  font-size: 1rem;
-
-  color: var(--dark);
+  margin-top: 20px;
 }
 
 .intro-bullets li {
-  position: relative;
-  padding-left: 24px;
-}
-
-.intro-bullets li::before {
-  content: "\f3a5";
-
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  color: var(--accent);
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* ---------------------------- */
@@ -296,57 +394,19 @@ header p {
   border-top-color: #16a34a;
 }
 
-/* ---------------------------- */
-/* Downloads / Links            */
-/* ---------------------------- */
-.downloads {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.downloads a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  background: #fff;
-
-  border-radius: 10px;
-
-  padding: 12px 18px;
-
-  color: var(--dark);
-
-  text-decoration: none;
-
-  border: 1px solid #ddd;
-
-  transition: all 0.3s ease;
-}
-
-.downloads a:hover {
-  background: var(--dark);
-  color: #fff;
-
-  border-color: var(--dark);
-
-  transform: translateY(-3px);
-}
 
 /* ---------------------------- */
 /* Contact Section              */
-/* ---------------------------- */
-.contact-icons {
+/* This also applies to products section icons*/
+.contact-icons {		
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .contact-icons .icon {
-  font-size: 4rem;
+  font-size: 5rem;
 
   border-radius: 20px;
 
@@ -382,23 +442,35 @@ header p {
   );
 }
 
-
-.icon.ebay {
-  background: linear-gradient(
-    135deg,
-    #e53238,
-    #0064d2
-  );
-
-  color: #fff;
-}
-
 .contact-icons .icon:hover {
   transform: translateY(-5px);
 
   box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 
   filter: brightness(1.1);
+}
+
+/* ----------------------------- */
+/* Online stores/products Section*/
+/* ----------------------------- */
+.products {
+  background: #e5e7eb;
+}
+.icon.ebay {
+  background: #0064d2;
+  color: #fff;
+}
+
+.icon.etsy {
+  background: #2b2b2b;
+  color: #888;
+}
+
+.icon.etsy.disabled {
+  opacity: 0.65;
+  filter: grayscale(100%);
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* ---------------------------- */
