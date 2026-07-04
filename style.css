@@ -285,6 +285,24 @@ section p {
   padding: 60px 20px;
 }
 
+.intro-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.intro-heading img {
+  display: none;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.intro-heading h2 {
+  margin: 0;
+}
+
 .intro-inner {
   display: flex;
   align-items: center;
@@ -299,11 +317,7 @@ section p {
 
   border-radius: 20px;
 
-  object-fit: cover;
-
-  border: 3px solid var(--border);
-
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  object-fit: contain;
 }
 
 .intro-text {
@@ -466,10 +480,11 @@ section p {
 }
 
 .icon.etsy {
-  background: #2b2b2b;
-  color: #888;
+  background: #F1641E;
+  color: white;
 }
 
+/* Only needed until store is live*/
 .icon.etsy.disabled {
   opacity: 0.65;
   filter: grayscale(100%);
@@ -588,12 +603,26 @@ footer {
     font-size: 1.05rem;
   }
 
+	.navbar {
+	  padding: 10px 2px;
+	}
+
   .navbar ul {
-    gap: 6px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 0;
+  }
+
+  .navbar ul li {
+    flex: 1;
+    text-align: center;
   }
 
   .navbar ul li a {
-    padding: 6px 8px;
+    display: block;
+    padding: 8px 4px;
+    font-size: clamp(0.72rem, 2.6vw, 0.9rem);
   }
 
   .intro {
@@ -603,15 +632,28 @@ footer {
   .intro-inner {
     gap: 20px;
   }
-
+  
   .intro-text {
     text-align: center;
-  }
+}
 
-  .intro-image img {
-    width: 170px;
-    height: 170px;
-  }
+.intro-image {
+    display: none;
+}
+
+.intro-heading {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.intro-heading img {
+    display: block;
+}
+
+.intro-heading h2 {
+    margin: 0;
+}
+
 
   .service-item {
     padding: 24px;
